@@ -1,0 +1,16 @@
+/*my comment*/
+#my_comment{padding:10px;}
+textarea#comment_insert,textarea#sub_comment_insert{width:100%;min-height:125px;border:1px solid #c1bfbf;padding:10px;box-sizing:border-box}
+.input_comment{margin:5px;height:30px;border:1px solid #c1bfbf;}
+.input_insert_comment{padding:0px 10px;}
+.btn_insert_comment,.sub_btn_insert_comment{background:#FBD648;font-weight:bold;padding:0px 10px;}
+.tool_comment{border-left:1px solid #c1bfbf;border-right:1px solid #c1bfbf;border-bottom:1px solid #c1bfbf;}
+.list_comment{padding:15px 0px;border-top:1px solid #c1bfbf;margin-top:40px;}
+.list_comment .item_comment{padding-left:30px;position:relative;margin-bottom:15px;}
+.avatar_comment{width:25px;height:25px;text-align:center;line-height:25px;background:#ccc;color:#fff;display:block;position:absolute;top:0px;left:0px;}
+.name_comment{font-weight:bold;color:#333;font-size:14px;}
+.content_comment{display: block;font-size: 14px;color: #4a4a4a;line-height: 22px;}
+
+.list_comment li ul{margin-top:15px;background:#F1F1F1;padding:15px 10px;border:1px solid #e7e7e7;position:relative;}
+.list_comment li ul:after{content:"";position:absolute;border-top:10px solid transparent;border-bottom:10px solid #F1F1F1;border-left:10px solid transparent;border-right:10px solid transparent;bottom:100%;left:20px;}
+.list_comment li ul:before{content:"";position:absolute;border-top:11px solid transparent;border-bottom:11px solid #e7e7e7;border-left:11px solid transparent;border-right:11px solid transparent;bottom:100%;left:20px;margin-left:-1px;}

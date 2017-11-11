@@ -1,0 +1,126 @@
+
+/*===== md =====*/
+@media screen  and (max-width: 1366px){
+	/*commont*/
+	.tl-md{text-align: left !important;}
+	.tr-md{text-align: right !important;}
+	.tc-md{text-align: center !important;}
+	.dbl-md{display: block !important;}
+	.dibl-md{display: inline-block !important;}
+	.hid-md{display: none !important;}	
+	.mg0-md{margin-left: 0px !important;margin-right: 0px !important;}
+	.w100-md{width: 100% !important;}
+	.pd0-md{padding: 0px !important;}
+	.pd10-md{padding-left: 10px !important;padding-right: 10px !important;}
+	.pd10v-md{padding-top: 10px 0px !important;padding-bottom: 10px;}
+	.mg10-md{padding: 0px 10px !important;}
+	.mgt10-md{margin-top: 10px !important;}
+	.mgbt10-md{margin-bottom: 10px !important;}
+	.fn-md{float: none !important;}
+}
+/*===== sm =====*/
+@media screen  and (max-width: 992px){
+	/*commont*/
+	.tl-sm{text-align: left !important;}
+	.tr-sm{text-align: right !important;}
+	.tc-sm{text-align: center !important;}
+	.dbl-sm{display: block !important;}
+	.dibl-sm{display: inline-block !important;}
+	.hid-sm{display: none !important;}	
+	.mg0-sm{margin-left: 0px !important;margin-right: 0px !important;}
+	.w100-sm{width: 100% !important;}
+	.pd0-sm{padding: 0px !important;}
+	.pd10-sm{padding-left: 10px !important;padding-right: 10px !important;}
+	.pd10v-sm{padding-top: 10px 0px !important;padding-bottom: 10px;}
+	.mg10-sm{padding: 0px 10px !important;}
+	.mgt10-sm{margin-top: 10px !important;}
+	.mgbt10-sm{margin-bottom: 10px !important;}
+	.fn-sm{float: none !important;}
+	
+}
+/*===== smx xs =====*/
+@media screen  and (max-width: 766px){
+	/*commont*/
+	.tl-smx{text-align: left !important;}
+	.tr-smx{text-align: right !important;}
+	.tc-smx{text-align: center !important;}
+	.dbl-smx{display: block !important;}
+	.dibl-smx{display: inline-block !important;}
+	.hid-smx{display: none !important;}
+	.mg0-smx{margin-left: 0px;margin-right: 0px !important;}
+	.w100-smx{width: 100% !important;}
+	.pd0-smx{padding: 0px !important;}
+	.pd10-smx{padding-left: 10px !important;padding-right: 10px !important;}
+	.pd10v-smx{padding-top: 10px 0px !important;padding-bottom: 10px;}
+	.mgt10-smx{margin-top: 10px !important;}
+	.mgbt10-smx{margin-bottom: 10px !important;}
+	.fn-smx{float: none !important;}
+}
+/*===== xs =====*/
+@media screen and  (max-width: 549px){
+	/*commont*/
+	.tl-xs{text-align: left !important;}
+	.tr-xs{text-align: right !important;}
+	.tc-xs{text-align: center !important;}
+	.dbl-xs{display: block !important;}
+	.dibl-xs{display: inline-block !important;}
+	.hid-xs{display: none !important;}
+	.mg0-xs{margin-left: 0px !important;margin-right: 0px !important;}
+	.w100-xs{width: 100% !important;}
+	.pd0-xs{padding: 0px !important}
+	.pd10-xs{padding-left: 10px !important;padding-right: 10px !important;}
+	.pd10v-xs{padding-top: 10px 0px !important;padding-bottom: 10px;}
+	.mgt10-xs{margin-top: 10px !important;}
+	.mgbt10-xs{margin-bottom: 10px !important;}
+	.fn-xs{float: none !important;}
+
+
+	#top img{width: 35px;}
+	
+	/*temp*/
+	/*[class*="col-"]{margin-top: 10px;}*/
+
+	.contain_form_send_ask{padding: 10px;}
+	.box_info_form,.box_info_giohang {width: 100%;padding: 0px;}
+	/*news*/
+	.item_news_other{width: 100%;}
+	/*lien he*/
+	.left_lienhe{width: 100%;}
+	.right_lienhe{width: 100%;}
+	.contain_table_giohang{overflow-x:scroll;}
+	.contain_table_giohang table{min-width: 450px;}
+
+}
+/*====================*/
+
+@media screen and (max-width:1170px){
+	#menu ul{display:none;}
+	#btn_menu_bootstrap{display:block !important;}
+	.contain_search{float:right;}
+}
+
+@media screen and (max-width:350px){
+	.contain_search label{display:none;}
+}
+
+@media screen and (min-width:1170px){
+	/*#menu_bootstrap{display:none !important;}*/
+}
+
+@media screen and (max-width: 450px){
+	.tablelienhe{display: block;}
+	.tablelienhe .my_row{display: block;}
+	.tablelienhe .my_row .my_cell{
+		display: block;
+		padding: 0px;
+		text-align: left;
+	}
+	.notify_check{padding: 0px;}
+	.tablelienhe .my_row .my_cell .input,
+	.tablelienhe .my_row .my_cell textarea
+	{
+		width: 100%;
+		margin-bottom: 10px;
+	}
+	
+}

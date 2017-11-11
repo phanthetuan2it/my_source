@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'UTMCookies';
+    src: url('fonts/UTMCookies.eot');
+    src: url('fonts/UTMCookies.eot') format('embedded-opentype'),
+         url('fonts/UTMCookies.woff2') format('woff2'),
+         url('fonts/UTMCookies.woff') format('woff'),
+         url('fonts/UTMCookies.ttf') format('truetype'),
+         url('fonts/UTMCookies.svg#UTMCookies') format('svg');
+}

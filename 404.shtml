@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0028)http://www.beegreen.vn/admin -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="vi-vn" lang="vi-vn" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>404 - lỗi: 404</title>
+	
+	<link rel="stylesheet" href="./css/error.css" type="text/css">
+			
+	<meta name="viewport" content="width=device-width, initial-scale=1.0;">
+</head>
+<body class="page-error" cz-shortcut-listen="true">
+	<div class="error">
+		<div id="outline">
+			<div id="errorboxoutline">
+				<div class="error-code"><span class="errorcode-4 errorcode-first">4</span><span class="errorcode-0">0</span><span class="errorcode-4 errorcode-last">4</span></div>
+				
+				<div class="error-message"><h2>Không tìm thấy bài viết</h2></div>
+				
+				<div id="errorboxbody">
+					Vui lòng thử một trong các trang sau:<br> 
+          <a class="button-home" href="index.html" title="Chuyển đến Trang chủ">Trang chủ</a>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+
+
+</body></html>
