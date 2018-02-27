@@ -1,8 +1,5 @@
-<script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/owl/owl.carousel.min.js"></script>
-<script type="text/javascript" src="js/slick/slick.min.js"></script>
-<script type="text/javascript" src="js/fancybox3/jquery.fancybox.min.js"></script>
-<?php if($source=='index'){ ?>
+
+
 <script type="text/javascript">
  
     var owl_index=$('.owl_sing_index');
@@ -46,10 +43,7 @@
   })
 });
 </script>
-<?php } ?>
 
-<?php if($show_slider){ //Slider nivo ?>
-<script type="text/javascript" src="js/nivo/jquery.nivo.slider.js"></script>
 <script type="text/javascript">
 	$('#slider').nivoSlider({
 		  effect: 'random',                 // Specify sets like: 'fold,fade,sliceDown'
@@ -75,18 +69,8 @@
 	});
     
 </script>
-<?php } ?>
 
-<!--back to top-->
-<script src="js/temp/js_backto_top.js"></script>
 
-<?php if($show_menu_left){ //Menu left  ?>
-<script src="js/my_js/script_menu_left.js"></script>
-<?php } ?>
-
-<?php if($show_menu_top){ //Menu top ?>
-<script src="js/my_js/script_menu_top.js"></script>
-<?php /* ?>
 <script type="text/javascript">
   $(window).scroll(function(){
     var s_top=$(window).scrollTop();
@@ -98,12 +82,9 @@
     }
   });
 </script>
-<?php */ ?>
-<?php } ?>
 
 
-<?php if($show_menu_mobile){  //Menu mobile?>
-<script language="javascript" type="text/javascript" src="js/mmenu/jquery.mmenu.all.min.js"></script>
+
 <script type="text/javascript">
 
 $("#menu_bootstrap").mmenu({
@@ -122,12 +103,7 @@ api_mmenu.bind('closed', function () {
   $('#btn_menu_bootstrap').removeClass('move_btn_bootstrap');
 });
 </script>
-<?php } ?>
 
-
-<?php  if($show_dkdn){ //dang ky dang nhap ?>
-<script type="text/javascript" src="js/script_facebook.js"></script>
-<script type="text/javascript" src="js/script_google.js"></script>
 
 <script type="text/javascript">
 	 $('.close_form').click(function(){
@@ -152,11 +128,8 @@ api_mmenu.bind('closed', function () {
 
 </script>
 
-<?php }  ?>
-
-
 <!--raty-->
-<script src="js/raty/jquery.raty.js"></script>
+
 <script type="text/javascript">
 
     $('.rate_p').raty({
@@ -183,10 +156,6 @@ api_mmenu.bind('closed', function () {
 
 </script>
 
-<?php if($com=='lien-he'||$show_multi_map){ ?>
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyDbYXUfyXrfWP46Zq7koC2u08xw_8So_ng"></script>
-<?php } ?>
-<?php  if($com=='lien-he'){ ?>
 <script type="text/javascript">
    var map;
    var infowindow;
@@ -213,8 +182,8 @@ api_mmenu.bind('closed', function () {
        
       google.maps.event.addDomListener(window, "load", initialize);
  </script>
-<?php } ?>
-<?php if($show_multi_map){ ?>
+
+
 <script type="text/javascript">
     var map;
     var infowindow;
@@ -280,15 +249,9 @@ api_mmenu.bind('closed', function () {
         moveToMaker(data_id);
     });
 </script>
-<?php } ?>
 
-<?php if($show_check_form){ //Check Form ?>
- <script type="text/javascript" src="js/temp/contact_js_check.js"></script>
- <?php } ?>
 
-<?php  if($show_simple_scroll){ //Simplescroll ?>
-<!--simply scroll-->
-<script type="text/javascript" src="js/simplyscroll/jquery.simplyscroll.js"></script>
+
 <!--vert-->
 <script type="text/javascript">
     (function($) {
@@ -297,14 +260,8 @@ api_mmenu.bind('closed', function () {
         });
     })(jQuery);
 </script>
-<?php } ?>
 
 
-<?php  if($show_fotorama){ //Fotorama ?>
- <script type="text/javascript" src="js/fotorama/fotorama.js"></script> 
-<?php } ?>
-
-<?php   if($show_video_select){ //video select ?>
 <script type="text/javascript">
   $('#list_video').change(function(){
     var id=$(this).val();
@@ -315,10 +272,8 @@ api_mmenu.bind('closed', function () {
     }
   });
 </script>
-<?php } ?>
 
 
-<?php  if($show_video_owl){ //video owl ?>
 <script type="text/javascript">
   var owl_video = $("#owl_video");
 
@@ -353,14 +308,8 @@ api_mmenu.bind('closed', function () {
   });
 
 </script>
-<?php } ?>
-
-<?php if($_GET['id']!=''){ //nếu là chi tiết ?>
-<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
 <script type="text/javascript">stLight.options({publisher: "52d300e4-b714-48ef-8a81-22c2ea7d8df3", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
-<?php } ?>
 
-<?php  if($show_doitac){ //đối tác?>
 <script type="text/javascript">
   var owl_doitac = $("#owl_doitac");
   owl_doitac.owlCarousel({
@@ -382,12 +331,7 @@ api_mmenu.bind('closed', function () {
     owl_doitac.trigger('owl.prev');
   })
 </script>
-<?php } ?>
 
-
-<?php if($source=='product'&&$_GET['id']!=''||$source=='index'){ //Chi tiết sản phẩm ?>
-<script type="text/javascript" src="js/magiczoomplus/magiczoomplus.js"></script> 
-<script type="text/javascript" src="js/temp/js_tab.js"></script>
 
 <script type="text/javascript">
   var owl_img_detail = $(".owl_img_detail");
@@ -410,12 +354,9 @@ api_mmenu.bind('closed', function () {
 
 </script>
 
-<?php } ?>
 
 
 
-
-<?php if($com!='gio-hang'){ //gio hang ?>
 <form name="form1" action="index.php">
     <input type="hidden" name="productid" />
     <input type="hidden" name="quality" />
@@ -432,11 +373,8 @@ api_mmenu.bind('closed', function () {
         document.form1.submit();
     }
 </script>
-<?php  } ?>
 
-<?php if($com=='san-pham-yeu-thich'){ ?>
 <link rel="stylesheet" type="text/css" href="css/confirm_master/jquery-confirm.css">
-<script src="js/confirm_master/jquery-confirm.js" type="text/javascript"></script>
 <script type="text/javascript">
 $('.remove_p_like').click(function(){
   var data_id=$(this).data('id');
@@ -476,10 +414,8 @@ $.confirm({
   });
 });
 </script>
-<?php } ?>
 
 
-<?php if($source=='index'||$source=='product'){ ?>
 <script type="text/javascript">
 
   $('.btn_like_p').click(function(){
@@ -523,12 +459,9 @@ $.confirm({
   }
 //end p like*/
 </script>
-<?php } ?>
 
 
-<script type="text/javascript" src="js/temp/js_giohang.js"></script>
 
-<?php if($show_popup){ //POP UP ?>
 
 <script type="text/javascript">
   
@@ -580,9 +513,6 @@ $.confirm({
   });
 
 </script>
-<?php }?>
-
-<script type="text/javascript" src="js/wow/wow.js"></script> 
 <script type="text/javascript">
 
     wow = new WOW(
@@ -594,7 +524,6 @@ $.confirm({
   wow.init();
 </script>
 
-<?php if($show_nhantin){ //dk nhan tin?>
 <script type="text/javascript">
   $('.dangkymail').submit(function(event) {
     var email = $('.dangkymail input').val();
@@ -623,9 +552,7 @@ $.confirm({
     return false;
   });
 </script>
-<?php } ?>
 
-<?php if($show_news_main_sub){ ?>
 <script type="text/javascript">
    $('#slider_main_news').slick({
     slidesToShow: 1,
@@ -646,13 +573,7 @@ $.confirm({
       nextArrow: $('.next_sub_news'),
   });
 </script>
-<?php } ?>
-<?php if($show_carousel_wow){ ?>
-<script type="text/javascript" src="js/carousel_wow/wowslider.js"></script>
-<script type="text/javascript" src="js/carousel_wow/script.js"></script>
-<?php } ?>
 
-<?php if($show_chat_face){ ?>
 <script type="text/javascript">
   $('.title_facebook_chat').click(function(){
      var h_box_chat=$('.box_facebook_chat').outerHeight();
@@ -675,4 +596,3 @@ $.confirm({
       }
   });
 </script>
-<?php } ?>

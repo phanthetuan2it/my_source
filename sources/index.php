@@ -6,7 +6,7 @@
 
 
 	$d->reset();
-	$d->query("select * from #_product where hienthi=1 and noibat=1 order stt asc, id desc");
+	$d->query("select * from #_product where hienthi=1 and noibat=1 order by stt asc, id desc");
 	$product_index=$d->result_array();
 
 ?>

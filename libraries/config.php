@@ -19,7 +19,7 @@
 
 	date_default_timezone_set('Asia/Ho_Chi_Minh');
 
-	$config_url=$_SERVER["SERVER_NAME"]."/source_tuan";
+	$config_url=$_SERVER["SERVER_NAME"]."/my_source";
 	//$config['debug']=1;    #Bật chế độ debug dành cho developer
 	$_SESSION['ck_folder']='http://'.$config_url.'/upload/';
 	$config_email="info@demo42.ninavietnam.com.vn";
@@ -31,7 +31,7 @@
 	$config['database']['servername'] = 'localhost';
 	$config['database']['username'] = 'root';
 	$config['database']['password'] = '';
-	$config['database']['database'] = 'source_tuan';
+	$config['database']['database'] = 'my_source';
 	$config['database']['refix'] = 'table_';
 	$name_log ="name_log"; //name session login
 ?>
