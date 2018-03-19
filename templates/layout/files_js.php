@@ -1,7 +1,29 @@
-
+<script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/owl/owl.carousel.min.js"></script>
+<script type="text/javascript" src="js/slick/slick.min.js"></script>
+<script type="text/javascript" src="js/fancybox3/jquery.fancybox.min.js"></script>
+<script type="text/javascript" src="js/nivo/jquery.nivo.slider.js"></script>
+<script type="text/javascript" src="js/temp/js_backto_top.js"></script>
+<!-- <script type="text/javascript" src="js/carousel_wow/wowslider.js"></script>
+<script type="text/javascript" src="js/carousel_wow/script.js"></script> -->
+<script type="text/javascript" src="js/my_js/script_menu_left.js"></script>
+<script type="text/javascript" src="js/my_js/script_menu_top.js"></script>
+<script type="text/javascript" src="js/mmenu/jquery.mmenu.all.min.js"></script>
+<script type="text/javascript" src="js/script_facebook.js"></script>
+<script type="text/javascript" src="js/script_google.js"></script>
+<script type="text/javascript" src="js/raty/jquery.raty.js"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyDbYXUfyXrfWP46Zq7koC2u08xw_8So_ng"></script>
+<script type="text/javascript" src="js/temp/contact_js_check.js"></script>
+<script type="text/javascript" src="js/simplyscroll/jquery.simplyscroll.js"></script>
+<script type="text/javascript" src="js/fotorama/fotorama.js"></script>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript" src="js/magiczoomplus/magiczoomplus.js"></script>
+<script type="text/javascript" src="js/temp/js_tab.js"></script>
+<script type="text/javascript" src="js/confirm_master/jquery-confirm.js"></script>
+<script type="text/javascript" src="js/temp/js_giohang.js"></script>
+<script type="text/javascript" src="js/plugin_template.js"></script>
 
 <script type="text/javascript">
- 
     var owl_index=$('.owl_sing_index');
     var data_id=$(this).data('id');
   owl_index.owlCarousel({
