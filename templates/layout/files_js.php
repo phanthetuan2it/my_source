@@ -12,7 +12,7 @@
 <script type="text/javascript" src="js/script_facebook.js"></script>
 <script type="text/javascript" src="js/script_google.js"></script>
 <script type="text/javascript" src="js/raty/jquery.raty.js"></script>
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyDbYXUfyXrfWP46Zq7koC2u08xw_8So_ng"></script>
+<!-- <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyDbYXUfyXrfWP46Zq7koC2u08xw_8So_ng"></script> -->
 <script type="text/javascript" src="js/temp/contact_js_check.js"></script>
 <script type="text/javascript" src="js/simplyscroll/jquery.simplyscroll.js"></script>
 <script type="text/javascript" src="js/fotorama/fotorama.js"></script>
@@ -20,6 +20,7 @@
 <script type="text/javascript" src="js/magiczoomplus/magiczoomplus.js"></script>
 <script type="text/javascript" src="js/confirm_master/jquery-confirm.js"></script>
 <script type="text/javascript" src="js/plugin_template.js"></script>
+<script type="text/javascript" src="js/owl-carousel-custom.js"></script>
 
 <script type="text/javascript">
   var owl_index=$('.owl_sing_index');
@@ -163,6 +164,7 @@ $('.rate_p').raty({
     }
   })
 </script>
+<?php /* ?>
 
 <script type="text/javascript">
     var map;
@@ -285,7 +287,7 @@ $('.rate_p').raty({
     moveToMaker(data_id);
   });
 </script>
-
+<?php */ ?>
 
 
 <!--vert-->

@@ -114,7 +114,7 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
           <?php include_once _template.$template."_tpl.php"; ?>
         </div><!--end main-->
         <div id="left" class="col-md-4 col-sm-4 col-xs-12 pd10-smx">
-          <?php include_once _template.'layout/left.php'; ?>
+          <?php // include_once _template.'layout/left.php'; ?>
         </div><!--end left-->
         </div><!--#container-->
         <div class="clear"></div>

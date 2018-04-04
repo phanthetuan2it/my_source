@@ -52,10 +52,10 @@ for ($i=0; $i <count($listnb) ; $i++) { ?>
     <div class="title_main"><span><?=$listnb[$i]['ten_'.$lang]?></span></div>
     <div class="content_main">
       <div class="box_re box_hid">
-        <div class="prev_cm prev<?=$listnb[$i]['id']?>"><i class="fa fa-chevron-left"></i></div>
-        <div class="next_cm next<?=$listnb[$i]['id']?>"><i class="fa fa-chevron-right"></i></div>
+        <div class="prev_cm" data-owl-prev><i class="fa fa-chevron-left"></i></div>
+        <div class="next_cm" data-owl-next><i class="fa fa-chevron-right"></i></div>
         <div class="row_p">
-         <div class="owl_index owl-carousel" data-id="<?=$listnb[$i]['id']?>">
+         <div class="owl-carousel" data-owl-carousel-custom>
             <?=get_product_items($product_index,'w100')?>
           </div><!--end row san pham-->
         </div>
