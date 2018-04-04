@@ -125,6 +125,5 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
 
 <?=$row_setting['vchat']?>
 <?=$row_setting['script_bottom']?>
-
 </body>
 </html>

@@ -9,8 +9,8 @@
   <div class="clear"></div>
 </div><!--end sub main-->
 
-<?php 
- for ($i=0; $i <count($listnb) ; $i++) { //danh muc theo tab
+<?php
+for ($i=0; $i <count($listnb) ; $i++) { //danh muc theo tab
   $d->reset();
   $d->query("select * from #_product_cat where hienthi=1 and id_list=".$listnb[$i]['id']." order by ten_$lang");
   $catnb=$d->result_array();
@@ -72,7 +72,7 @@ for ($i=0; $i <count($listnb) ; $i++) { ?>
       </div>
       <div class="right_index box_hid">
         <div class="row_p">
-          <div class="owl_sing_index owl-carousel">';
+          <div class="owl_sing_index owl-carousel">
             <?php 
               foreach ($product_index as $key => $value) { 
               if(($key) % 6 === 0) echo '<div>';

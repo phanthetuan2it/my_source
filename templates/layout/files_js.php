@@ -88,10 +88,8 @@
         slideshowEnd: function(){},     // Triggers after all slides have been shown
         lastSlide: function(){},         // Triggers when last slide is shown
         afterLoad: function(){$('.contain_slider').css({'height':'auto'})}         // Triggers when slider has loaded
-	});
-    
+  });
 </script>
-
 
 <script type="text/javascript">
   $(window).scroll(function(){
@@ -105,18 +103,16 @@
   });
 </script>
 
-
-
 <script type="text/javascript">
-
 $("#menu_bootstrap").mmenu({
-   "extensions": [
-      "pagedim-black"
-   ],
-    navbar: {
+  "extensions": [
+    "pagedim-black"
+  ],
+  navbar: {
     title: "Menu"
   }
 });
+
 var api_mmenu=$("#menu_bootstrap").data('mmenu');
 api_mmenu.bind('opened', function () {
   $('#btn_menu_bootstrap').addClass('move_btn_bootstrap');
@@ -126,85 +122,50 @@ api_mmenu.bind('closed', function () {
 });
 </script>
 
-
 <script type="text/javascript">
-	 $('.close_form').click(function(){
-	 	$(this).parents('.full_bglightbox').fadeOut(300,function(){
-	 		overflow_hidden_element('body',false);
-	 	});
+  $('.close_form').click(function(){
+    $(this).parents('.full_bglightbox').fadeOut(300,function(){
+      overflow_hidden_element('body',false);
+    });
+  });
 
-	 });
-	
-	 function open_dkdn(id_div){
-	 	overflow_hidden_element('body',true);
-	 	$(id_div).fadeIn();
-	 	e.preventDefault();
-	 }
-	 function overflow_hidden_element(my_select,condition){
-	 	if(condition)
-	 		$(my_select).addClass('overflow_hidden');
-	 	else
-	 		$(my_select).removeClass('overflow_hidden');
+  function open_dkdn(id_div){
+    overflow_hidden_element('body',true);
+    $(id_div).fadeIn();
+    e.preventDefault();
+  }
 
-	 }
-
+  function overflow_hidden_element(my_select,condition){
+    if(condition)
+      $(my_select).addClass('overflow_hidden');
+    else
+      $(my_select).removeClass('overflow_hidden');
+    }
 </script>
 
 <!--raty-->
-
 <script type="text/javascript">
-
-    $('.rate_p').raty({
-    		half     : true,
-		  	path     : null,
-		  	starHalf : 'css/raty/images/star-half2.png',
-		  	starOff  : 'css/raty/images/star-off2.png',
-		  	starOn   : 'css/raty/images/star-on2.png',
-		  	score: function() {
-		    	return $(this).attr('data-score');
-		  	},
-		  	click: function(score, evt) {
-    			var id=$(this).attr('data-id');
-    			$.ajax({
-    				type:'get',
-    				data:{score:score,id:id},
-    				url:'ajax/ajax_rating.php',
-    				success:function(data){
-
-    				}
-    			})
-  			}
-    });
-
+$('.rate_p').raty({
+  half: true,
+  path: null,
+  starHalf: 'css/raty/images/star-half2.png',
+  starOff: 'css/raty/images/star-off2.png',
+  starOn: 'css/raty/images/star-on2.png',
+  score: function() {
+    return $(this).attr('data-score');
+  },
+  click: function(score, evt) {
+    var id=$(this).attr('data-id');
+      $.ajax({
+        type:'get',
+        data:{score:score,id:id},
+        url:'ajax/ajax_rating.php',
+        success:function(data){
+        }
+      })
+    }
+  })
 </script>
-
-<script type="text/javascript">
-   var map;
-   var infowindow;
-   var marker= new Array();
-   var old_id= 0;
-   var infoWindowArray= new Array();
-   var infowindow_array= new Array();
-    function initialize(){
-       var defaultLatLng = new google.maps.LatLng(<?=$row_setting['toado']?>);
-       var myOptions= {
-           zoom: 11,
-           center: defaultLatLng,
-           scrollwheel : false,
-           mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-        map = new google.maps.Map(document.getElementById("map_contact"), myOptions);map.setCenter(defaultLatLng);
-        
-       var arrLatLng = new google.maps.LatLng(<?=$row_setting['toado']?>);
-       infoWindowArray[7895] = '<div class="map_description"><div class="map_title"><?=$row_setting["ten_".$lang]?></div><div>Địa Chỉ : <?=$row_setting["diachi_".$lang]?></div></div>';
-       loadMarker(arrLatLng, infoWindowArray[7895], 7895);
-       
-       moveToMaker(7895);}function loadMarker(myLocation, myInfoWindow, id){marker[id] = new google.maps.Marker({position: myLocation, map: map, visible:true});
-       var popup = myInfoWindow;infowindow_array[id] = new google.maps.InfoWindow({ content: popup});google.maps.event.addListener(marker[id], 'mouseover', function() {if (id == old_id) return;if (old_id > 0) infowindow_array[old_id].close();infowindow_array[id].open(map, marker[id]);old_id = id;});google.maps.event.addListener(infowindow_array[id], 'closeclick', function() {old_id = 0;});}function moveToMaker(id){var location = marker[id].position;map.setCenter(location);if (old_id > 0) infowindow_array[old_id].close();infowindow_array[id].open(map, marker[id]);old_id = id;}
-       
-      google.maps.event.addDomListener(window, "load", initialize);
- </script>
-
 
 <script type="text/javascript">
     var map;
@@ -214,73 +175,129 @@ api_mmenu.bind('closed', function () {
     var infoWindowArray= new Array();
     var infowindow_array= new Array();
     function initialize(){
-        var defaultLatLng = new google.maps.LatLng(<?=($chinhanh[0]['toado'])?$chinhanh[0]['toado']:$row_setting['toado']?>);
-        var bounds = new google.maps.LatLngBounds();
-        var myOptions= {
-          zoom: 6,
-          center: defaultLatLng,
-          scrollwheel : true,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-        map = new google.maps.Map(document.getElementById("map_contact_multi"), myOptions);
-        map.setCenter(defaultLatLng);
+      var defaultLatLng = new google.maps.LatLng(<?=$row_setting['toado']?>);
+      var myOptions= {
+        zoom: 11,
+        center: defaultLatLng,
+        scrollwheel : false,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      };
+      map = new google.maps.Map(document.getElementById("map_contact"), myOptions);
+      map.setCenter(defaultLatLng);
+      var arrLatLng = new google.maps.LatLng(<?=$row_setting['toado']?>);
+      infoWindowArray[7895] = '<div class="map_description"><div class="map_title"><?=$row_setting["ten_".$lang]?></div><div>Địa Chỉ : <?=$row_setting["diachi_".$lang]?></div></div>';
 
-
-        <?php if (count($chinhanh)>0) { ?>
-          //alert(<?=$chinhanh[0]['toado']?>);
-            <?php foreach ($chinhanh as $key => $value) {  ?>
-                var arrLatLng = new google.maps.LatLng(<?=$value['toado']?>);
-                infoWindowArray[<?=$value['id']?>] = '<div class="map_description"><div class="map_title"><?=$value["ten"]?></div><div><?=_diachi?>: <?=$value["diachi"]?></div><div><?=_dienthoai?>: <?=$value["dienthoai"]?></div><div>Website: <?=$value["website"]?></div><div>Facebook: <?=$value["facebook"]?></div></div>';
-                loadMarker(arrLatLng, infoWindowArray[<?=$value['id']?>], <?=$value['id']?>);
-
-                bounds.extend(arrLatLng);
-            <?php } ?>
-            //moveToMaker(<?=$toado[0]['id']?>);
-        <?php }else{ ?>
-            var arrLatLng = new google.maps.LatLng(<?=$row_setting['toado']?>);
-            infoWindowArray[<?=$row_setting['id']?>] = '<div class="map_description"><div class="map_title"><?=$row_setting["ten_".$lang]?></div><div><?=_diachi?>: <?=$row_setting["diachi_".$lang]?></div></div>';
-            loadMarker(arrLatLng, infoWindowArray[<?=$row_setting['id']?>], <?=$row_setting['id']?>);
-            moveToMaker(<?=$row_setting['id']?>);
-        <?php } ?>
-
-        map.fitBounds(bounds);
-     //    var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
-      //     this.setZoom(4);
-      //     google.maps.event.removeListener(boundsListener);
-      // });
+      loadMarker(arrLatLng, infoWindowArray[7895], 7895);
+      moveToMaker(7895);
     }
-
-    function loadMarker(myLocation, myInfoWindow, id){
+    
+    function loadMarker(myLocation, myInfoWindow, id) {
       marker[id] = new google.maps.Marker({position: myLocation, map: map, visible:true});
-        var popup = myInfoWindow;
-        infowindow_array[id] = new google.maps.InfoWindow({ content: popup});
+      var popup = myInfoWindow;
+      infowindow_array[id] = new google.maps.InfoWindow({ content: popup});
+      google.maps.event.addListener(marker[id], 'mouseover', function() {
+        if (id == old_id) return;
+        if (old_id > 0) infowindow_array[old_id].close();
+        infowindow_array[id].open(map, marker[id]);old_id = id;});
         google.maps.event.addListener(infowindow_array[id], 'closeclick', function() {old_id = 0;});
     }
+    
     function moveToMaker(id){
-        var location = marker[id].position;
-        map.setCenter(location);
-        map.setZoom(9); 
-        if (old_id > 0) 
-        infowindow_array[old_id].close();
-        infowindow_array[id].open(map, marker[id]);old_id = id;
+      var location = marker[id].position;map.setCenter(location);
+      if (old_id > 0) infowindow_array[old_id].close();
+      infowindow_array[id].open(map, marker[id]);old_id = id;
     }
-    google.maps.event.addDomListener(window, 'load', initialize);
+    
+    google.maps.event.addDomListener(window, "load", initialize);
+</script>
 
-    $(document).delegate(".change_maker","click",function(e){
-        var data_id=$(this).attr('data-id');
-        moveToMaker(data_id);
-    });
+
+<script type="text/javascript">
+  var map;
+  var infowindow;
+  var marker= new Array();
+  var old_id= 0;
+  var infoWindowArray= new Array();
+  var infowindow_array= new Array();
+  function initialize(){
+    var defaultLatLng = new google.maps.LatLng(<?=($chinhanh[0]['toado'])?$chinhanh[0]['toado']:$row_setting['toado']?>);
+    var bounds = new google.maps.LatLngBounds();
+    var myOptions= {
+      zoom: 6,
+      center: defaultLatLng,
+      scrollwheel : true,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    map = new google.maps.Map(document.getElementById("map_contact_multi"), myOptions);
+    map.setCenter(defaultLatLng);
+    <?php if (count($chinhanh)>0) { ?>
+      //alert(<?=$chinhanh[0]['toado']?>);
+    <?php foreach ($chinhanh as $key => $value) { ?>
+      var arrLatLng = new google.maps.LatLng(<?=$value['toado']?>);
+      infoWindowArray[<?=$value['id']?>] = 
+      [
+        '<div class="map_description">',
+          '<div class="map_title"><?=$value["ten"]?></div>',
+          '<div><?=_diachi?>: <?=$value["diachi"]?></div>',
+          '<div><?=_dienthoai?>: <?=$value["dienthoai"]?></div>',
+          '<div>Website: <?=$value["website"]?></div>',
+          '<div>Facebook: <?=$value["facebook"]?></div>',
+        '</div>'
+      ].join();
+      loadMarker(arrLatLng, infoWindowArray[<?=$value['id']?>], <?=$value['id']?>);
+      bounds.extend(arrLatLng);
+    <?php } ?>
+        //moveToMaker(<?=$toado[0]['id']?>);
+    <?php } else { ?>
+      var arrLatLng = new google.maps.LatLng(<?=$row_setting['toado']?>);
+      infoWindowArray[<?=$row_setting['id']?>] = 
+      [
+        '<div class="map_description">',
+          '<div class="map_title"><?=$row_setting["ten_".$lang]?></div>',
+          '<div><?=_diachi?>: <?=$row_setting["diachi_".$lang]?></div>',
+        '</div>'
+      ].join();
+      loadMarker(arrLatLng, infoWindowArray[<?=$row_setting['id']?>], <?=$row_setting['id']?>);
+      moveToMaker(<?=$row_setting['id']?>);
+    <?php } ?>
+    map.fitBounds(bounds);
+    // var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
+    // this.setZoom(4);
+    // google.maps.event.removeListener(boundsListener);
+    // });
+  }
+
+  function loadMarker(myLocation, myInfoWindow, id){
+    marker[id] = new google.maps.Marker({position: myLocation, map: map, visible:true});
+    var popup = myInfoWindow;
+    infowindow_array[id] = new google.maps.InfoWindow({ content: popup});
+    google.maps.event.addListener(infowindow_array[id], 'closeclick', function() {old_id = 0;});
+  }
+  function moveToMaker(id){
+    var location = marker[id].position;
+    map.setCenter(location);
+    map.setZoom(9); 
+    if (old_id > 0) 
+    infowindow_array[old_id].close();
+    infowindow_array[id].open(map, marker[id]);old_id = id;
+  }
+  google.maps.event.addDomListener(window, 'load', initialize);
+
+  $(document).delegate(".change_maker","click",function(e){
+    var data_id=$(this).attr('data-id');
+    moveToMaker(data_id);
+  });
 </script>
 
 
 
 <!--vert-->
 <script type="text/javascript">
-    (function($) {
-        $(function() {
-            $(".list_news_scroll").simplyScroll({orientation:'vertical',customClass:'vert'});
-        });
-    })(jQuery);
+  (function($) {
+      $(function() {
+          $(".list_news_scroll").simplyScroll({orientation:'vertical',customClass:'vert'});
+      });
+  })(jQuery);
 </script>
 
 
@@ -298,37 +315,31 @@ api_mmenu.bind('closed', function () {
 
 <script type="text/javascript">
   var owl_video = $("#owl_video");
-
   owl_video.owlCarousel({
-  items : 4, //10 items above 1000px browser width
-  itemsDesktop : [1000,4], //5 items between 1000px and 901px
-  itemsDesktopSmall : [900,3], // betweem 900px and 601px
-  itemsTablet: [600,2], //2 items between 600 and 0
-  itemsMobile : false, // itemsMobile disabled - inherit from itemsTablet option
-  slideSpeed: 500,
-  pagination:false,
-  navigation:false
-});
+    items : 4, //10 items above 1000px browser width
+    itemsDesktop : [1000,4], //5 items between 1000px and 901px
+    itemsDesktopSmall : [900,3], // betweem 900px and 601px
+    itemsTablet: [600,2], //2 items between 600 and 0
+    itemsMobile : false, // itemsMobile disabled - inherit from itemsTablet option
+    slideSpeed: 500,
+    pagination:false,
+    navigation:false
+  });
   // Custom Navigation Events
   $(".next_video").click(function(){
     owl_video.trigger('owl.next');
   })
-
   $(".prev_video").click(function(){
     owl_video.trigger('owl.prev');
   })
-
-   $('.item_video').click(function(){
-    var id=$(this).data('id');
-
-    var w_video=$('#main_video_owl').find('iframe').attr('width');
-    var h_video=$('#main_video_owl').find('iframe').attr('height');
-    if(id!=0){
-      $('#main_video_owl iframe').attr('src','https://www.youtube.com/embed/'+id);
-    }
-
+  $('.item_video').click(function(){
+  var id=$(this).data('id');
+  var w_video=$('#main_video_owl').find('iframe').attr('width');
+  var h_video=$('#main_video_owl').find('iframe').attr('height');
+  if(id!=0){
+    $('#main_video_owl iframe').attr('src','https://www.youtube.com/embed/'+id);
+  }
   });
-
 </script>
 <script type="text/javascript">stLight.options({publisher: "52d300e4-b714-48ef-8a81-22c2ea7d8df3", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
 
@@ -376,80 +387,76 @@ api_mmenu.bind('closed', function () {
 
 </script>
 
-
-
-
 <form name="form1" action="index.php">
-    <input type="hidden" name="productid" />
-    <input type="hidden" name="quality" />
-    <input type="hidden" name="psize" />
-    <input type="hidden" name="pmau" />
-    <input type="hidden" name="command" />
+  <input type="hidden" name="productid" />
+  <input type="hidden" name="quality" />
+  <input type="hidden" name="psize" />
+  <input type="hidden" name="pmau" />
+  <input type="hidden" name="command" />
 </form>
 
 <script language="javascript" type="text/javascript">
-    function addtocart(pid,q){
-        document.form1.productid.value=pid;
-        document.form1.quality.value=q;
-        document.form1.command.value='add';
-        document.form1.submit();
-    }
+  function addtocart(pid,q){
+    document.form1.productid.value=pid;
+    document.form1.quality.value=q;
+    document.form1.command.value='add';
+    document.form1.submit();
+  }
 </script>
 
 <link rel="stylesheet" type="text/css" href="css/confirm_master/jquery-confirm.css">
 <script type="text/javascript">
-$('.remove_p_like').click(function(){
-  var data_id=$(this).data('id');
-  var index_parent=$(this).parents('.my_row').index();
-$.confirm({
-      title: 'Xóa',
-      content: 'Bạn muốn xóa sản phẩm này khỏi danh sách yêu thích',
-      icon: 'fa fa-question-circle',
-      animation: 'scale',
-      closeAnimation: 'scale',
-      opacity: 0.5,
-      buttons: {
-          'confirm': {
-              text: 'Xóa',
-              btnClass: 'btn-info',
-              action: function () {
-                $.ajax({
-                  data:{data_id:data_id,action:'delete'},
-                  url:'ajax/ajax_like_p.php',
-                  type:'get',
-                  success:function(data){
-                    if(data.trim()=='1'){
-                       $('.table_p_like').find('.my_row:eq('+index_parent+')').remove();
-                    }
-                    
-                  }
-                })
+  $('.remove_p_like').click(function() {
+    var data_id=$(this).data('id');
+    var index_parent=$(this).parents('.my_row').index();
+  $.confirm({
+    title: 'Xóa',
+    content: 'Bạn muốn xóa sản phẩm này khỏi danh sách yêu thích',
+    icon: 'fa fa-question-circle',
+    animation: 'scale',
+    closeAnimation: 'scale',
+    opacity: 0.5,
+    buttons: {
+      'confirm': {
+        text: 'Xóa',
+        btnClass: 'btn-info',
+        action: function () {
+          $.ajax({
+            data:{data_id:data_id,action:'delete'},
+            url:'ajax/ajax_like_p.php',
+            type:'get',
+            success:function(data){
+              if(data.trim()=='1'){
+                $('.table_p_like').find('.my_row:eq('+index_parent+')').remove();
               }
-          },
-          cancel: {
-            text:'Thoát',
-              action:function () {
               
             }
-          },
-      }
+          })
+        }
+      },
+      cancel: {
+        text:'Thoát',
+          action:function () {
+          
+        }
+      },
+    }
+    });
   });
-});
 </script>
 
 
 <script type="text/javascript">
-
   $('.btn_like_p').click(function(){
-      var data_id=$(this).data('id');
-      $.ajax({
-        data:{data_id:data_id,action:'add'},
-        url:'ajax/ajax_like_p.php',
-        type:'get',
-        success:function(data){
-          show_my_alert(data);
-        }
-      })
+    var data_id=$(this).data('id');
+    $.ajax({
+      data:{data_id:data_id,action:'add'},
+      url:'ajax/ajax_like_p.php',
+      type:'get',
+      success:function(data){
+        show_my_alert(data);
+      }
+    })
   });
 
   function show_my_alert(data){
@@ -482,17 +489,15 @@ $.confirm({
 //end p like*/
 </script>
 
-
-
-
 <script type="text/javascript">
-  
   $(window).load(function(){
     init_my_popup();
   });
+
   $(window).resize(function(){
     init_my_popup();
   });
+
   function init_my_popup(){
     $('#my_popup').fadeIn(1000);
     check_content_popup();
@@ -530,17 +535,15 @@ $.confirm({
     $('#my_popup').fadeOut(1000);
     setTimeout(function(){
       $my_popup.remove();
-      
     },1000);
   });
-
 </script>
-<script type="text/javascript">
 
+<script type="text/javascript">
     wow = new WOW(
     {
       animateClass: 'animated',
-      offset:       200
+      offset: 200
     }
   );
   wow.init();
@@ -600,21 +603,21 @@ $.confirm({
   $('.title_facebook_chat').click(function(){
      var h_box_chat=$('.box_facebook_chat').outerHeight();
     if(h_box_chat>100){
-        var this_click=$(this);
-        var this_w=this_click.outerWidth();
-        var contain_w=$('#facebook_chat').outerWidth();
-        var w_trans=contain_w-this_w;
-        if(!this_click.hasClass('click')){
-          this_click.animate({'right':w_trans},300,function(){
-              $('.body_facebook_chat').animate({'height':h_box_chat},300);
-          });
-          this_click.addClass('click');
-        }else{
-           $('.body_facebook_chat').animate({'height':0},300,function(){
-              this_click.animate({'right':0},300);
-          });
-           this_click.removeClass('click');
-        }
+      var this_click=$(this);
+      var this_w=this_click.outerWidth();
+      var contain_w=$('#facebook_chat').outerWidth();
+      var w_trans=contain_w-this_w;
+      if(!this_click.hasClass('click')){
+        this_click.animate({'right':w_trans},300,function(){
+          $('.body_facebook_chat').animate({'height':h_box_chat},300);
+        });
+        this_click.addClass('click');
+      }else{
+          $('.body_facebook_chat').animate({'height':0},300,function(){
+          this_click.animate({'right':0},300);
+        });
+          this_click.removeClass('click');
       }
+    }
   });
 </script>
