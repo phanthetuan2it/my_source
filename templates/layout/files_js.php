@@ -89,7 +89,7 @@
   });
 </script>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
   $(window).scroll(function(){
     var s_top=$(window).scrollTop();
     var s_con=$('.contain_menu').offset().top;
@@ -99,7 +99,7 @@
       $('#menu').removeClass('menu_fixed');
     }
   });
-</script>
+</script> -->
 
 <script type="text/javascript">
 $("#menu_bootstrap").mmenu({

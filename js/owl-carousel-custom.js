@@ -29,8 +29,8 @@
       var that = this,
           thisElement = that.$element,
           opts = that.options,
-          btnNext = thisElement.closest(opts.dataOwlNext),
-          btnPrev = thisElement.closest(opts.dataOwlPrev);
+          btnNext = thisElement.parent().parent().find(opts.dataOwlNext),
+          btnPrev = thisElement.parent().parent().find(opts.dataOwlPrev);
       $(btnPrev).on('click.' + pluginName, function() {
         alert('232');
         thisElement.trigger('owl.prev');
