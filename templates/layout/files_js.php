@@ -18,14 +18,12 @@
 <script type="text/javascript" src="js/fotorama/fotorama.js"></script>
 <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
 <script type="text/javascript" src="js/magiczoomplus/magiczoomplus.js"></script>
-<script type="text/javascript" src="js/temp/js_tab.js"></script>
 <script type="text/javascript" src="js/confirm_master/jquery-confirm.js"></script>
-<script type="text/javascript" src="js/temp/js_giohang.js"></script>
 <script type="text/javascript" src="js/plugin_template.js"></script>
 
 <script type="text/javascript">
-    var owl_index=$('.owl_sing_index');
-    var data_id=$(this).data('id');
+  var owl_index=$('.owl_sing_index');
+  var data_id=$(this).data('id');
   owl_index.owlCarousel({
     singleItem:true,
     slideSpeed: 500,
@@ -40,7 +38,6 @@
     owl_index.trigger('owl.prev');
   })
 </script>
-
 
 <script type="text/javascript">
   $('.owl_index').each(function(){
@@ -67,27 +64,27 @@
 </script>
 
 <script type="text/javascript">
-	$('#slider').nivoSlider({
-		  effect: 'random',                 // Specify sets like: 'fold,fade,sliceDown'
-        slices: 15,                     // For slice animations
-        boxCols: 8,                     // For box animations
-        boxRows: 4,                     // For box animations
-        animSpeed: 500,                 // Slide transition speed
-        pauseTime: 3000,                 // How long each slide will show
-        startSlide: 0,                     // Set starting Slide (0 index)
-        directionNav: true,             // Next & Prev navigation
-        controlNav: false,                 // 1,2,3... navigation
-        controlNavThumbs: false,         // Use thumbnails for Control Nav
-        pauseOnHover: true,             // Stop animation while hovering
-        manualAdvance: false,             // Force manual transitions
-        prevText: 'Prev',                 // Prev directionNav text
-        nextText: 'Next',                 // Next directionNav text
-        randomStart: false,             // Start on a random slide
-        beforeChange: function(){},     // Triggers before a slide transition
-        afterChange: function(){},         // Triggers after a slide transition
-        slideshowEnd: function(){},     // Triggers after all slides have been shown
-        lastSlide: function(){},         // Triggers when last slide is shown
-        afterLoad: function(){$('.contain_slider').css({'height':'auto'})}         // Triggers when slider has loaded
+  $('#slider').nivoSlider({
+    effect: 'random',                 // Specify sets like: 'fold,fade,sliceDown'
+    slices: 15,                     // For slice animations
+    boxCols: 8,                     // For box animations
+    boxRows: 4,                     // For box animations
+    animSpeed: 500,                 // Slide transition speed
+    pauseTime: 3000,                 // How long each slide will show
+    startSlide: 0,                     // Set starting Slide (0 index)
+    directionNav: true,             // Next & Prev navigation
+    controlNav: false,                 // 1,2,3... navigation
+    controlNavThumbs: false,         // Use thumbnails for Control Nav
+    pauseOnHover: true,             // Stop animation while hovering
+    manualAdvance: false,             // Force manual transitions
+    prevText: 'Prev',                 // Prev directionNav text
+    nextText: 'Next',                 // Next directionNav text
+    randomStart: false,             // Start on a random slide
+    beforeChange: function(){},     // Triggers before a slide transition
+    afterChange: function(){},         // Triggers after a slide transition
+    slideshowEnd: function(){},     // Triggers after all slides have been shown
+    lastSlide: function(){},         // Triggers when last slide is shown
+    afterLoad: function(){$('.contain_slider').css({'height':'auto'})}         // Triggers when slider has loaded
   });
 </script>
 
@@ -619,5 +616,83 @@ $('.rate_p').raty({
           this_click.removeClass('click');
       }
     }
+  });
+</script>
+
+
+<script type="text/javascript">
+// *********** cart ***********
+  function del(pid) {
+    if(confirm('Xóa sản phẩm này ! ')) {
+      document.form1.pid.value=pid;
+      document.form1.command.value='delete';
+        document.form1.submit();
+    }
+  }
+
+  function clear_cart() {
+    if(confirm('Bạn Chắc Có Muốn Xóa Giỏ Hàng Hay Không ? ')) {
+      document.form1.command.value='clear';
+      document.form1.submit();
+    }
+  }
+
+  function update_cart() {
+    if(confirm('Cập nhật giỏ hàng của bạn ?')) {
+      document.form1.command.value='update';
+      document.form1.submit();
+    }
+  }
+
+  /*code button cong tru*/
+  $(document).ready(function() {
+      $('.minius_cart').click(function(){
+        var action=$(this).attr('data-action');
+        var id_product=$(this).attr('data-id');
+        var number_cart=$(this).parent().children('.number_cart').val();
+        if(number_cart>1){
+          number_cart=parseInt(number_cart)-1;
+          $(this).parent().children('.number_cart').val(number_cart);
+          update_cart_ajax($(this),action,id_product,number_cart);
+        }
+        return false;
+      });
+
+      $('.plus_cart').click(function(){
+        var action=$(this).attr('data-action');
+        var id_product=$(this).attr('data-id');
+        var number_cart=$(this).parent().children('.number_cart').val();
+        if(number_cart<101){
+          number_cart=parseInt(number_cart)+1;
+          $(this).parent().children('.number_cart').val(number_cart);
+          update_cart_ajax($(this),action,id_product,number_cart);
+        }
+        return false;
+      });
+
+    function update_cart_ajax(element,action,id_product,quantity) {
+      $.ajax({
+        url:'ajax/ajax_update_cart.php',
+        data:{action:action,id_product:id_product,quantity:quantity},
+        dataType:'json',
+        type:'post',
+        success:function(data){
+          element.parents('tr').find('.price_p_cart').text(data.total_this);
+          $('.price_all_cart').text(data.total_all);
+        }
+      });
+    }
+  });
+</script>
+
+<script type="text/javascript">
+  // ***** tab *****
+  $('.item_tab_cm').click(function(){
+    $(this).parent().find('.item_tab_cm').removeClass('active');
+    var id_tab=$(this).attr('href');
+    $(this).addClass('active');
+    $(this).parents('.my_box_tab').find('.content_tab_cm').css({'display':'none'});
+    $(id_tab).fadeIn();
+    return false;
   });
 </script>
