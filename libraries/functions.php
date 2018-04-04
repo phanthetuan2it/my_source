@@ -410,13 +410,13 @@ function phanquyen_tv($com, $quyen, $act, $type) {
   $xoa_arr = explode('|',"delete|delete_list|delete_cat|delete_item,delete_sub");
   $sua_arr = explode('|',"edit|edit_list|edit_cat|edit_item|edit_sub|save|save_list|save_cat|save_item|save_sub");
 
-  if(in_array($act,$xem_arr)) {
-    return in_array($com_manager['id'].'|1',$xem_s) ? 1 : 0;
-  } else if(in_array($act,$them_arr)) {
-    in_array($com_manager['id'].'|1',$them_s) ? return 1 : 0;
-  } else if(in_array($act,$xoa_arr)) {
+  if(in_array($act, $xem_arr)) {
+    return in_array($com_manager['id'].'|1', $xem_s) ? 1 : 0;
+  } else if(in_array($act, $them_arr)) {
+    return in_array($com_manager['id'].'|1',$them_s) ? 1 : 0;
+  } else if(in_array($act, $xoa_arr)) {
     return in_array($com_manager['id'].'|1',$xoa_s) ? 1 : 0;
-  } else if(in_array($act,$sua_arr)) {
+  } else if(in_array($act, $sua_arr)) {
      return in_array($com_manager['id'].'|1',$sua_s) ? 1 : 0;
   }
   return 0;
