@@ -2,8 +2,8 @@
 <base href="http://<?=$config_url?>/">
 <meta name="description" content="<?php if($description_bar!='') echo $description_bar; else echo $row_setting['description']; ?>">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-<meta name="viewport" content="width=1349" />
-<?php /* ?><meta name="viewport" content="width=device-width, initial-scale=1.0"/><?php */ ?>
+<!-- <meta name="viewport" content="width=1349" /> -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title><?php if($title_bar!='') echo $title_bar; else echo $row_setting['title']; ?></title>
 <meta name="keywords" content="<?php if($keywords_bar!='') echo $keywords_bar; else echo $row_setting['keywords']; ?>">
 <meta name="robots" content="index,follow" />

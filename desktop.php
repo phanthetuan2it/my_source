@@ -119,7 +119,7 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
         </div><!--#container-->
         <div class="clear"></div>
         <?php include_once _template.'layout/module/doitac.php'; ?>
-        <?php include_once _template.'layout/footer.php';  ?>
+        <?php // include_once _template.'layout/footer.php';  ?>
     </div><!-- #wrapper -->
 </div><!-- #full --> 
 <?php include_once _template.'layout/files_js.php'; ?>

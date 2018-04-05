@@ -8,9 +8,8 @@
 <link rel="stylesheet" href="css/bootstrap/bootstrap.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/style_media.css">
-<link href="css/owl/owl.carousel.css" type="text/css" rel="stylesheet">
-<link href="css/owl/owl.transitions.css" type="text/css" rel="stylesheet">
-<link href="css/owl/owl.theme.css" type="text/css" rel="stylesheet">
+<link href="css/owl2/owl.carousel.min.css" type="text/css" rel="stylesheet">
+<link href="css/owl2/owl.theme.default.min.css" type="text/css" rel="stylesheet">
 <link rel="stylesheet" href="css/fonts.css">
 <link rel="stylesheet" href="css/font_awesome/css/font-awesome.min.css">
 <link rel="stylesheet" href="css/nivo/themes/default/default.css" type="text/css" media="screen" />

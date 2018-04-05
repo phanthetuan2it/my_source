@@ -7,6 +7,6 @@
 	if($deviceType == 'computer'){
 		include_once 'desktop.php';
 	}else{
-		include_once 'mobile.php';
+		include_once 'desktop.php';
 	}
 ?>

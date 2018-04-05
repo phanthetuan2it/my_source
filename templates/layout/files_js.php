@@ -1,68 +1,26 @@
 <script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/owl/owl.carousel.min.js"></script>
+<script type="text/javascript" src="js/owl2/owl.carousel.min.js"></script>
 <script type="text/javascript" src="js/slick/slick.min.js"></script>
 <script type="text/javascript" src="js/fancybox3/jquery.fancybox.min.js"></script>
 <script type="text/javascript" src="js/nivo/jquery.nivo.slider.js"></script>
 <script type="text/javascript" src="js/temp/js_backto_top.js"></script>
-<!-- <script type="text/javascript" src="js/carousel_wow/wowslider.js"></script>
-<script type="text/javascript" src="js/carousel_wow/script.js"></script> -->
+<script type="text/javascript" src="js/wow/wow.js"></script>
 <script type="text/javascript" src="js/my_js/script_menu_left.js"></script>
 <script type="text/javascript" src="js/my_js/script_menu_top.js"></script>
 <script type="text/javascript" src="js/mmenu/jquery.mmenu.all.min.js"></script>
-<script type="text/javascript" src="js/script_facebook.js"></script>
-<script type="text/javascript" src="js/script_google.js"></script>
 <script type="text/javascript" src="js/raty/jquery.raty.js"></script>
-<!-- <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyDbYXUfyXrfWP46Zq7koC2u08xw_8So_ng"></script> -->
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyDbYXUfyXrfWP46Zq7koC2u08xw_8So_ng"></script>
 <script type="text/javascript" src="js/temp/contact_js_check.js"></script>
 <script type="text/javascript" src="js/simplyscroll/jquery.simplyscroll.js"></script>
 <script type="text/javascript" src="js/fotorama/fotorama.js"></script>
 <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
 <script type="text/javascript" src="js/magiczoomplus/magiczoomplus.js"></script>
 <script type="text/javascript" src="js/confirm_master/jquery-confirm.js"></script>
-<script type="text/javascript" src="js/plugin_template.js"></script>
-<script type="text/javascript" src="js/owl-carousel-custom.js"></script>
-
-<script type="text/javascript">
-  var owl_index=$('.owl_sing_index');
-  var data_id=$(this).data('id');
-  owl_index.owlCarousel({
-    singleItem:true,
-    slideSpeed: 500,
-    pagination:false,
-    navigation:false
-  });
-  // Custom Navigation Events
-  $(".next"+data_id).click(function(){
-    owl_index.trigger('owl.next');
-  })
-  $(".prev"+data_id).click(function(){
-    owl_index.trigger('owl.prev');
-  })
-</script>
-
-<script type="text/javascript">
-  $('.owl_index').each(function(){
-    var owl_index=$(this);
-    var data_id=$(this).data('id');
-  owl_index.owlCarousel({
-      items : 4, //10 items above 1000px browser width
-      itemsDesktop : [1000,4], //5 items between 1000px and 901px
-      itemsDesktopSmall : [900,4], // betweem 900px and 601px
-      itemsTablet: [600,4], //2 items between 600 and 0
-      itemsMobile : false, // itemsMobile disabled - inherit from itemsTablet option
-    slideSpeed: 500,
-    pagination:false,
-    navigation:false
-  });
-  // Custom Navigation Events
-  $(".next"+data_id).click(function(){
-    owl_index.trigger('owl.next');
-  })
-  $(".prev"+data_id).click(function(){
-    owl_index.trigger('owl.prev');
-  })
-});
-</script>
+<script type="text/javascript" src="js/plugins/owl-carousel-custom.js"></script>
+<?php /* ?>
+<script type="text/javascript" src="js/script_facebook.js"></script>
+<script type="text/javascript" src="js/script_google.js"></script>
+<?php */ ?>
 
 <script type="text/javascript">
   $('#slider').nivoSlider({
@@ -294,7 +252,7 @@ $('.rate_p').raty({
 <script type="text/javascript">
   (function($) {
       $(function() {
-          $(".list_news_scroll").simplyScroll({orientation:'vertical',customClass:'vert'});
+        $(".list_news_scroll").simplyScroll({orientation:'vertical',customClass:'vert'});
       });
   })(jQuery);
 </script>

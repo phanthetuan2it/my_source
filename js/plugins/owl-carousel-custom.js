@@ -23,28 +23,35 @@
       var that = this,
           thisElement = that.$element,
           opts = that.options;
+      if(thisElement.children().length <= opts.owlOptions.items) {
+        opts.owlOptions.loop = false;
+      }
+      if(!opts.responsive) {
+        opts.owlOptions.responsive = null;
+      }
       that.objOwl = thisElement.owlCarousel(opts.owlOptions);
     },
     initArrow: function() {
       var that = this,
           thisElement = that.$element,
           opts = that.options,
-          btnNext = thisElement.parent().parent().find(opts.dataOwlNext),
-          btnPrev = thisElement.parent().parent().find(opts.dataOwlPrev);
-      $(btnPrev).on('click.' + pluginName, function() {
-        alert('232');
-        thisElement.trigger('owl.prev');
+          parentElement = thisElement.parent(),
+          btnNext = null,
+          btnPrev = null;
+      while(!parentElement.find(opts.dataOwlNext).length && !parentElement.find(opts.dataOwlPrev).lenght) {
+        parentElement = parentElement.parent();
+      }
+      btnNext = parentElement.find(opts.dataOwlNext),
+      btnPrev = parentElement.find(opts.dataOwlPrev);
+
+      $(btnPrev).off('click.' + pluginName).on('click.' + pluginName, function() {
+        thisElement.trigger('prev.owl.carousel');
       })
 
-      $(btnNext).on('click.' + pluginName, function() {
-        thisElement.trigger('owl.next');
+      $(btnNext).off('click.' + pluginName).on('click.' + pluginName, function() {
+        thisElement.trigger('next.owl.carousel');
       })
     },
-
-    destroy: function () {
-      $.removeData(this.element[0], pluginName);
-    }
-    
   }
 
   $.fn[pluginName] = function (options, params) {
@@ -60,18 +67,27 @@
   };
 
   $.fn[pluginName].defaults = {
-    dataOwlCarouselCustom: '[data-owl-carousel-custom]',
     dataOwlNext: '[data-owl-next]',
     dataOwlPrev: '[data-owl-prev]',
+    responsive: true,
     owlOptions: {
-      items : 4, //10 items above 1000px browser width
-      itemsDesktop : [1000,4], //5 items between 1000px and 901px
-      itemsDesktopSmall : [900,4], // betweem 900px and 601px
-      itemsTablet: [600,4], //2 items between 600 and 0
-      itemsMobile : false, // itemsMobile disabled - inherit from itemsTablet option
-      slideSpeed: 500,
-      pagination:false,
-      navigation:false
+      items: 4,
+      loop:true,
+      margin:10,
+      nav:false,
+      dots: false,
+      responsive:{
+        0:{
+          items:1,
+          loop: true
+        },
+        600:{
+          items:3
+        },
+        1000:{
+          items:4
+        }
+      }
     }
   };
 

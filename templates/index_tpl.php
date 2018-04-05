@@ -55,7 +55,7 @@ for ($i=0; $i <count($listnb) ; $i++) { ?>
         <div class="prev_cm" data-owl-prev><i class="fa fa-chevron-left"></i></div>
         <div class="next_cm" data-owl-next><i class="fa fa-chevron-right"></i></div>
         <div class="row_p">
-         <div class="owl-carousel" data-owl-carousel-custom>
+         <div class="owl-carousel owl-theme" data-owl-carousel-custom>
             <?=get_product_items($product_index,'w100')?>
           </div><!--end row san pham-->
         </div>
