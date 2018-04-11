@@ -21,8 +21,7 @@
             $count_item_menu=count($item_menu);
             if($count_item_menu>0){ ?>
               <ul>
-                <?php
-                for ($k=0; $k <$count_item_menu ; $k++) { ?>
+                <?php for ($k=0; $k <$count_item_menu ; $k++) { ?>
                   <li><a href="san-pham/<?=$item_menu[$k]['tenkhongdau']?>-<?=$item_menu[$k]['id']?>/"><?=$item_menu[$k]['ten_'.$lang]?></a>
                     <?php
                     $d->reset();
@@ -52,8 +51,7 @@
   <?php
   if(count($news_list_menu)){ ?>
   <ul>
-    <?php
-    foreach ($news_list_menu as $key => $value) { ?>
+    <?php foreach ($news_list_menu as $key => $value) { ?>
       <li><a href="tin-tuc/<?=$value['tenkhongdau']?>-<?=$value['id']?>/"><?=$value['ten']?></a>
         <?php
         $d->reset();

@@ -40,6 +40,7 @@
     <div class="title_left"><span>Video</span></div>
     <div class="content_left">
        <?php include_once _template.'layout/module/video.php'; ?>
+       <?php include_once _template.'layout/module/video_owl.php'; ?>
     </div><!--end content_left-->
 </div><!--end sub left-->
 

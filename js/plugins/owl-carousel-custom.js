@@ -23,9 +23,7 @@
       var that = this,
           thisElement = that.$element,
           opts = that.options;
-      if(thisElement.children().length <= opts.owlOptions.items) {
-        opts.owlOptions.loop = false;
-      }
+      opts.owlOptions['loop'] = thisElement.children().length >= opts.owlOptions.items;
       if(!opts.responsive) {
         opts.owlOptions.responsive = null;
       }

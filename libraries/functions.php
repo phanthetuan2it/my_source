@@ -31,7 +31,7 @@ function get_product_items($product,$class_add="",$com="san-pham") {
           </a>
         </div><!--end dat hang san pham-->
         <div class="btn_like_p" data-id="<?=$value['id']?>"><i class="fa fa-heart fa-4x"></i></div>
-        <div class="rate_p" data-score="<?=$value['rate']?>" data-id="<?=$value['id']?>"></div>
+        <div class="rate_p" data-my-raty data-score="<?=$value['rate']?>" data-id="<?=$value['id']?>"></div>
       </div><!--end box san pham-->
     </div><!--end col san pham-->
   <?php }
@@ -103,6 +103,26 @@ function update_col_count($id, $table, $col) {
   $num= $row[$col]+1;
   $sql= "update $table set $col='".$num."' where id=$id";
   mysql_query($sql);
+}
+
+function combine_my_files($array_files, $destination_dir, $dest_file_name, $isRewite){
+  if (!is_file($destination_dir . $dest_file_name) || $isRewite){ //continue only if file doesn't exist
+    $content = '';
+    $nameFile = md5("my_mini_file".$dest_file_name);
+    foreach ($array_files as $file){ //loop through array list
+      $content .= file_get_contents($file);
+    }
+      //You can use some sort of minifier here 
+      //minify_my_js($content);
+
+    $new_file = fopen($destination_dir . $nameFile.$dest_file_name, "w" ); //open file for writing
+    fwrite($new_file , $content); //write to destination
+    fclose($new_file); 
+    return '<script src="'. $destination_dir . $nameFile.$dest_file_name.'"></script>';
+  } else { 
+    //use stored file
+    return '<script src="'. $destination_dir . $nameFile.$dest_file_name.'"></script>';
+  }
 }
 
 function format_giaban($giaban, $dinhdang, $duoi) {

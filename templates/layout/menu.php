@@ -4,7 +4,7 @@
   $news_list_menu=$d->result_array();
 ?>
 
-<div id="menu">
+<div id="menu" data-my-menu-top data-is-fixed="true">
   <div class="inner">
     <a href="#menu_bootstrap" id="btn_menu_bootstrap" data-role="button" role="button" ><span class="transAll03"></span></a>
       <ul>

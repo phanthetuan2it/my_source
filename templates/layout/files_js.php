@@ -1,26 +1,31 @@
-<script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/owl2/owl.carousel.min.js"></script>
-<script type="text/javascript" src="js/slick/slick.min.js"></script>
-<script type="text/javascript" src="js/fancybox3/jquery.fancybox.min.js"></script>
-<script type="text/javascript" src="js/nivo/jquery.nivo.slider.js"></script>
-<script type="text/javascript" src="js/temp/js_backto_top.js"></script>
-<script type="text/javascript" src="js/wow/wow.js"></script>
-<script type="text/javascript" src="js/my_js/script_menu_left.js"></script>
-<script type="text/javascript" src="js/my_js/script_menu_top.js"></script>
-<script type="text/javascript" src="js/mmenu/jquery.mmenu.all.min.js"></script>
-<script type="text/javascript" src="js/raty/jquery.raty.js"></script>
+<?php
+  $files = array(
+    'js/bootstrap/bootstrap.min.js',
+    'js/owl2/owl.carousel.min.js',
+    'js/slick/slick.min.js',
+    'js/fancybox3/jquery.fancybox.min.js',
+    'js/nivo/jquery.nivo.slider.js',
+    'js/temp/js_backto_top.js',
+    'js/wow/wow.js',
+    'js/my_js/script_menu_left.js',
+    'js/mmenu/jquery.mmenu.all.min.js',
+    'js/raty/jquery.raty.js',
+    'js/temp/contact_js_check.js',
+    'js/simplyscroll/jquery.simplyscroll.js',
+    'js/magiczoomplus/magiczoomplus.js',
+    'js/confirm_master/jquery-confirm.js',
+    'js/plugins/owl-carousel-custom.js',
+    'js/plugins/my-raty.js',
+    'js/plugins/my-menu-top.js',
+    'js/fotorama/fotorama.js',
+    'js/script_facebook.js',
+    'js/script_google.js',
+  );
+  echo combine_my_files($files, 'cache/', '.js', 1);
+?>
+
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyDbYXUfyXrfWP46Zq7koC2u08xw_8So_ng"></script>
-<script type="text/javascript" src="js/temp/contact_js_check.js"></script>
-<script type="text/javascript" src="js/simplyscroll/jquery.simplyscroll.js"></script>
-<script type="text/javascript" src="js/fotorama/fotorama.js"></script>
 <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
-<script type="text/javascript" src="js/magiczoomplus/magiczoomplus.js"></script>
-<script type="text/javascript" src="js/confirm_master/jquery-confirm.js"></script>
-<script type="text/javascript" src="js/plugins/owl-carousel-custom.js"></script>
-<?php /* ?>
-<script type="text/javascript" src="js/script_facebook.js"></script>
-<script type="text/javascript" src="js/script_google.js"></script>
-<?php */ ?>
 
 <script type="text/javascript">
   $('#slider').nivoSlider({
@@ -46,18 +51,6 @@
     afterLoad: function(){$('.contain_slider').css({'height':'auto'})}         // Triggers when slider has loaded
   });
 </script>
-
-<!-- <script type="text/javascript">
-  $(window).scroll(function(){
-    var s_top=$(window).scrollTop();
-    var s_con=$('.contain_menu').offset().top;
-    if(s_top>=s_con){
-      $('#menu').addClass('menu_fixed');
-    }else{
-      $('#menu').removeClass('menu_fixed');
-    }
-  });
-</script> -->
 
 <script type="text/javascript">
 $("#menu_bootstrap").mmenu({
@@ -99,29 +92,7 @@ api_mmenu.bind('closed', function () {
     }
 </script>
 
-<!--raty-->
-<script type="text/javascript">
-$('.rate_p').raty({
-  half: true,
-  path: null,
-  starHalf: 'css/raty/images/star-half2.png',
-  starOff: 'css/raty/images/star-off2.png',
-  starOn: 'css/raty/images/star-on2.png',
-  score: function() {
-    return $(this).attr('data-score');
-  },
-  click: function(score, evt) {
-    var id=$(this).attr('data-id');
-      $.ajax({
-        type:'get',
-        data:{score:score,id:id},
-        url:'ajax/ajax_rating.php',
-        success:function(data){
-        }
-      })
-    }
-  })
-</script>
+
 <?php /* ?>
 
 <script type="text/javascript">
@@ -271,24 +242,6 @@ $('.rate_p').raty({
 
 
 <script type="text/javascript">
-  var owl_video = $("#owl_video");
-  owl_video.owlCarousel({
-    items : 4, //10 items above 1000px browser width
-    itemsDesktop : [1000,4], //5 items between 1000px and 901px
-    itemsDesktopSmall : [900,3], // betweem 900px and 601px
-    itemsTablet: [600,2], //2 items between 600 and 0
-    itemsMobile : false, // itemsMobile disabled - inherit from itemsTablet option
-    slideSpeed: 500,
-    pagination:false,
-    navigation:false
-  });
-  // Custom Navigation Events
-  $(".next_video").click(function(){
-    owl_video.trigger('owl.next');
-  })
-  $(".prev_video").click(function(){
-    owl_video.trigger('owl.prev');
-  })
   $('.item_video').click(function(){
   var id=$(this).data('id');
   var w_video=$('#main_video_owl').find('iframe').attr('width');
@@ -299,50 +252,6 @@ $('.rate_p').raty({
   });
 </script>
 <script type="text/javascript">stLight.options({publisher: "52d300e4-b714-48ef-8a81-22c2ea7d8df3", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
-
-<script type="text/javascript">
-  var owl_doitac = $("#owl_doitac");
-  owl_doitac.owlCarousel({
-      items : 8, //10 items above 1000px browser width
-      itemsDesktop : [1000,8], //5 items between 1000px and 901px
-      itemsDesktopSmall : [900,8], // betweem 900px and 601px
-      itemsTablet: [600,8], //2 items between 600 and 0
-      itemsMobile : false, // itemsMobile disabled - inherit from itemsTablet option
-	  slideSpeed: 500,
-	  pagination:false,
-	  navigation:false,
-  });
-
-  $(".next_doitac").click(function(){
-    owl_doitac.trigger('owl.next');
-  })
-
-  $(".prev_doitac").click(function(){
-    owl_doitac.trigger('owl.prev');
-  })
-</script>
-
-
-<script type="text/javascript">
-  var owl_img_detail = $(".owl_img_detail");
-  owl_img_detail.owlCarousel({
-      items : 4, //10 items above 1000px browser width
-      itemsDesktop : [1000,4], //5 items between 1000px and 901px
-      itemsDesktopSmall : [900,4], // betweem 900px and 601px
-      itemsTablet: [600,4], //2 items between 600 and 0
-      itemsMobile : false, // itemsMobile disabled - inherit from itemsTablet option
-	  slideSpeed: 500,
-	  pagination:false,
-	  navigation:false,
-  });
-  $(".next_sub_detail").click(function(){
-    owl_img_detail.trigger('owl.next');
-  })
-  $(".prev_sub_detail").click(function(){
-    owl_img_detail.trigger('owl.prev');
-  })
-
-</script>
 
 <form name="form1" action="index.php">
   <input type="hidden" name="productid" />
