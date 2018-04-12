@@ -2,7 +2,7 @@
 @import url("my_css/my_css_common.css");
 /*================== end import =================*/
 #full{max-width: 1349px;margin: 0px auto;overflow-x:hidden;position: relative;}
-.prev_cm,.next_cm{position: absolute;width: 27px;height: 27px;top:50%;margin-top: -14px;cursor: pointer;z-index: 100;display: flex;align-items:center;justify-content:center;border:1px solid #cdcdcd;background: #fff;}
+.prev_cm,.next_cm{position: absolute;width: 27px;height: 27px;top:50%;margin-top: -14px;cursor: pointer;z-index: 9;display: flex;align-items:center;justify-content:center;border:1px solid #cdcdcd;background: #fff;}
 .prev_cm{left: 0px;}
 .next_cm{right: 0px;}
 .row_p{margin-left:-15px;margin-right: -15px;}
@@ -106,7 +106,6 @@ transition:all 0.3s;}
 #menu ul li ul li a{background:none !important;color:#fff !important;line-height:normal !important;padding: 10px 25px;}
 #menu ul li ul li a:hover{color:#ff0 !important;}
 #menu ul li ul li ul{top:0;left:100%;}
-#menu.is-fixed{position: fixed !important;width: 100% !important;left: auto !important;top:0px !important;z-index: 300;max-width: 1349px;}
 /*menu bootstrap*/
 #btn_menu_bootstrap{z-index:999;position: absolute;left: 10px;top:10px;height: 24px;width: 30px;display: none;}
 #btn_menu_bootstrap span{background: #fff;content: '';display: block;width: 100%;height: 2px;position: absolute;left: 0px;top:50%;margin-top: -1px;}

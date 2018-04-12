@@ -6,7 +6,7 @@
 
 <div id="menu" data-my-menu-top data-is-fixed="true">
   <div class="inner">
-    <a href="#menu_bootstrap" id="btn_menu_bootstrap" data-role="button" role="button" ><span class="transAll03"></span></a>
+    <a href="#menu_bootstrap" id="btn_menu_bootstrap" data-btn-menu data-role="button" role="button" ><span class="transAll03"></span></a>
       <ul>
         <?php include _template.'layout/items_menu.php'; ?>
       </ul>
@@ -15,4 +15,8 @@
 </div>
 <!-- #menu -->
 
-<?php //include_once _template.'layout/menu_mobile.php'; ?>
+<nav id="menu_bootstrap" data-menu-mobile style="display:none;">
+  <ul>
+    <?php include _template.'layout/items_menu.php'; ?>
+  </ul>
+</nav>

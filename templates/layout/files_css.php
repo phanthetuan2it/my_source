@@ -4,26 +4,30 @@
     <script src="js/html5shiv.min.js?version=3.7.3"></script>
     <script src="js/respond.min.js?version=1.4.2"></script>
 <![endif]-->
-
-<link rel="stylesheet" href="css/bootstrap/bootstrap.css">
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/style_media.css">
-<link href="css/owl2/owl.carousel.min.css" type="text/css" rel="stylesheet">
-<link href="css/owl2/owl.theme.default.min.css" type="text/css" rel="stylesheet">
-<link rel="stylesheet" href="css/fonts.css">
-<link rel="stylesheet" href="css/font_awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="css/nivo/themes/default/default.css" type="text/css" media="screen" />
-<link rel="stylesheet" href="css/nivo/themes/light/light.css" type="text/css" media="screen" />
-<link rel="stylesheet" href="css/nivo/themes/dark/dark.css" type="text/css" media="screen" />
-<link rel="stylesheet" href="css/nivo/themes/bar/bar.css" type="text/css" media="screen" />
-<link rel="stylesheet" href="css/nivo/nivo-slider.css" type="text/css" media="screen" />
-<link rel="stylesheet" type="text/css" href="css/fancybox3/jquery.fancybox.min.css" media="screen" />
-<link type="text/css" href="css/magiczoomplus/magiczoomplus.css" media="all" rel="stylesheet" />
-<link type="text/css" href="css/wow/animate.min.css" media="all" rel="stylesheet" />
-<link rel="stylesheet" href="css/mmenu/jquery.mmenu.all.css">
-<link rel="stylesheet" href="css/raty/jquery.raty.css">
-<link rel="stylesheet" href="css/simplyscroll/jquery.simplyscroll.css" media="all" type="text/css">
-<link rel="stylesheet" type="text/css" href="css/slick/slick.css"/>
-<link rel="stylesheet" type="text/css" href="css/slick/slick-theme.css"/>
+<?php
+  $files = array(
+    'css/bootstrap/bootstrap.css',
+    'css/style.css',
+    'css/style_media.css',
+    'css/owl2/owl.carousel.min.css',
+    'css/owl2/owl.theme.default.min.css',
+    'css/fonts.css',
+    'css/font_awesome/css/font-awesome.min.css',
+    'css/nivo/themes/default/default.css',
+    'css/nivo/themes/light/light.css',
+    'css/nivo/themes/dark/dark.css',
+    'css/nivo/themes/bar/bar.css',
+    'css/nivo/nivo-slider.css',
+    'css/fancybox3/jquery.fancybox.min.css',
+    'css/magiczoomplus/magiczoomplus.css',
+    'css/wow/animate.min.css',
+    'css/mmenu/jquery.mmenu.all.css',
+    'css/raty/jquery.raty.css',
+    'css/simplyscroll/jquery.simplyscroll.css',
+    'css/slick/slick.css',
+    'css/slick/slick-theme.css',
+  );
+  echo combine_my_files($files, 'cache/', '.css', 1);
+?>
 
 <script type="text/javascript" src="js/jquery-1.11.3.js"></script>

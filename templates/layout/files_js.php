@@ -53,25 +53,6 @@
 </script>
 
 <script type="text/javascript">
-$("#menu_bootstrap").mmenu({
-  "extensions": [
-    "pagedim-black"
-  ],
-  navbar: {
-    title: "Menu"
-  }
-});
-
-var api_mmenu=$("#menu_bootstrap").data('mmenu');
-api_mmenu.bind('opened', function () {
-  $('#btn_menu_bootstrap').addClass('move_btn_bootstrap');
-});
-api_mmenu.bind('closed', function () {
-  $('#btn_menu_bootstrap').removeClass('move_btn_bootstrap');
-});
-</script>
-
-<script type="text/javascript">
   $('.close_form').click(function(){
     $(this).parents('.full_bglightbox').fadeOut(300,function(){
       overflow_hidden_element('body',false);
